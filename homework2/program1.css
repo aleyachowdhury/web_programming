@@ -1,0 +1,142 @@
+#nav li {
+	
+    
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin: 2px;
+    border-right: 10px solid blue;
+     background-color: lightgray;
+    }
+    #nav li a{
+
+        padding: 10px;
+
+
+    }
+    #content{
+    	background-image: url("tomato.jpg");
+    }
+
+h1,h5{
+	font-style: italic;
+	font-size: 30px;
+	color: white;
+    background-color: #0b413e;
+    border: 10px lightgreen;
+    text-align: center;
+    padding: 20px;
+
+
+}
+h2, h6{
+	font-size: 20px;
+    color: black;
+    text-align: left;
+    padding: 8px;
+}
+
+
+#intro{
+    font-size: 16px;
+    color: black;
+    background-color: #a8f0ed;
+    border: 3px lightblue;
+	padding:25px;
+
+}
+
+
+.pic  {
+   margin: 0 auto;
+	width: 50%; 
+	display: block;
+	border-radius: 60%;
+	overflow: hidden;
+	
+	
+}
+.pic1{
+	float: right;
+	margin: 0 0 20px 20px;
+}
+div.desc {
+    padding: 20px;
+    text-align: center;
+
+
+}
+#content1 {
+    background-color: #FFCC00;
+    font-family:Georgia;
+	}
+	
+h3,h4 {
+	background-color: #F0F0F0;
+	text-align:center;
+	color: #A4A400;
+	font-family:Verdana;
+	}	
+
+p {  
+	
+	text-align:left;
+	font-size: 14px;
+	color:#000000;
+	font-family:Georgia;
+	}	
+span{
+  font-weight: bold;
+}
+	
+
+	
+table {
+	background-color:#CC9933;
+	color:#FFFFFF;
+	margin:20px 0px 0px 0px;
+	border-style:solid;
+	border-color: #FFFFFF;
+	border-collapse: collapse;
+	
+	
+	}	
+	
+th {
+	background-color:#FFFFFF;
+	
+	color:#A4A400;
+	font-family:Verdana bold;
+	border-color: #FFFFFF;
+	
+	}	
+	
+tr {
+	border: 2px solid #FFFFFF;
+	
+	
+}	
+td {
+	border: 2px solid #FFFFFF;
+}
+
+.data1 {
+	background-color:#003366;
+	color: #FFFFFF;
+	font-size:16px;
+	text-align: center;
+
+	}
+.data2 {
+	background-color:#CC9933;
+	text-align: center;
+	font-size:18px ;
+	color: #FFFFFF;
+	
+	}
+
+
+
+
