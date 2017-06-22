@@ -1,0 +1,172 @@
+
+
+body{
+	 font-family: arial,sans-serif;
+    font-size: 14px;
+     min-width: 850px;
+     border: 0px;
+     width: 85%;
+     align-content: center;    
+}
+
+ .img{
+ 	
+    margin: 0 auto;
+	width: 50%; 
+	display: block;
+	border-radius: 60%
+	}
+#tittle{
+	font-style: italic;
+	font-size: 30px;
+	color: blue;
+    background-color: #D0D3D4;
+    border: 10px lightgreen;
+    
+    padding: 20px;
+
+    
+}
+.description{
+    font-size: 16px;
+    color: purple;
+    background-color: #E8FBFB;
+    border: 3px lightblue;
+	padding:25px;
+}
+
+	
+#content span{
+        color: red;
+        font-weight: bold;
+    }
+
+
+ 
+#content{
+    
+     
+	background-image: url("img1.jpg");
+}
+
+
+
+
+
+
+
+#header{
+	font-size: 25px;
+	display: block;
+    color: blue;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    background-color: #E8FBFB;
+    border: 3px lightblue;
+    list-style: none;
+
+
+}
+#header li{
+    display: inline;
+    padding: 16px;
+
+}
+#a{
+
+	font-size: 16px;
+	color:blue;
+	background-color: #E8FBFB;
+	padding: 8px;
+}
+#b{
+	font-size: 16px;
+	color:blue;
+	background-color: #ccff99;
+	padding: 8px;
+}
+#c{
+	font-size: 16px;
+	color:blue;
+	background-color: #ffeecc;
+	padding: 8px;
+}
+#d{
+	font-size: 16px;
+	color:blue;
+	background-color: #e6ccff;
+	padding: 8px;
+}
+
+.edu{
+	
+    background-color: #E8DAEF;
+    
+    border: 25px solid gray;
+    padding: 25px;
+    margin: 25px;
+    
+}
+.hobby{
+ 	
+ 	font-size: 16px;
+	color:black;
+	background-color: #E8FBFB;
+ }
+ .box2{
+	background-color: #ABEBC6;
+    border: 25px solid gray;
+    padding: 25px;
+    margin: 25px;
+    
+}
+
+	
+.ha{
+clear:left;
+ 	font-size: 16px;
+	color:black;
+	background-color: #E8FBFB;
+}
+
+h1{
+	font-size: 20px;
+    color: black;
+    text-align: left;
+    padding: 8px;
+}
+h2{
+	font-size: 20px;
+    color: black;
+    text-align: left;
+}
+h3{
+	font-size: 20px;
+    color: purple;
+    text-align: left;
+}
+h5{
+	font-size: 16px;
+    color: black;
+    text-align: left;
+   
+}
+
+
+h6{
+   font-size: 16px;
+    color: black;
+    text-align: left;
+    
+
+}
+
+#footer{
+
+ 	font-size: 16px;
+	color:black;
+	background-color: #E8FBFB;
+}
+
+
