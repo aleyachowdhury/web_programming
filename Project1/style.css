@@ -1,0 +1,586 @@
+/*:checked modifies what has been checked (radio and checkboxes only)*/
+
+
+
+* {		/*applies this margin and padding to every element*/
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("background.gif");
+}
+
+#bodydiv { 	/*centers whole table*/
+	position: relative;
+	width: 320px;
+	height: 480px;
+	margin: 10px auto;
+}
+
+#options {		/*makes top border where reset button is located*/ 
+	position: absolute;
+	top: 7px;
+	width: 314px;
+	height: 29px;
+	border: inset 3px #eee;
+	background-color: #ccc;
+}
+
+#flag_switch {		 /*makes red button turn on/off flags*/
+	position: absolute;
+	top: 18px;
+	left: 240px;
+	width: 13px;
+	height: 13px;
+	border: inset 1px #eee;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	
+	background-color: #f00;
+	border: outset 2px #c00;
+	-webkit-border-radius: 100%;
+	cursor: pointer;
+}
+
+/*:checked keyword modifies what has been checked (radio and checkboxes only)*/
+						/*if its been checked then it changes to look clicked.*/
+#flag_switch:checked {		
+	background-color: #a00;
+	border: inset 2px #900;
+}
+
+#right_sign {		/*makes border for the right side where 'FLAG' will appear*/
+	position: absolute;
+	top: 12px;
+	left: 260px;
+	width: 52px;
+	height: 23px;
+	background-repeat: no-repeat;
+	border: inset 1px #eee;
+}
+
+#call {
+	position: absolute;
+	top: -45px;
+	left: 0;
+	width: 39px;
+	height: 23px;
+	border: inset 1px #eee;
+}
+
+input#play {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 320px;
+	height: 320px;
+	border: inset 7px;
+	z-index: 9999;
+	opacity: 0.6;
+	background-color: #000;
+	-webkit-appearance: button;
+}
+
+
+
+input#play:checked {
+	z-index: -99;
+ 	-webkit-animation-play-state: paused;
+ 	outline: none;
+ 	border: none;
+}
+
+input#play:checked ~ .maptable{
+	-webkit-animation-play-state: paused;
+}
+
+#the_flag {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 306px;
+	height: 306px;
+	border: inset 7px #eee;
+	z-index: 1;
+}
+
+.maptable {		/*div class surrounding whole table*/
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 306px;
+	height: 306px;
+	border: inset 7px #eee;
+	z-index: 1;
+}
+
+#map_flag {			/*creates boxes for possible locations the user wants to put a flag in*/
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 306px;
+	height: 306px;
+	border: inset 7px #eee;
+	z-index: 9990;
+	pointer-events: none;		/*disables ability to check the box*/
+}
+
+#map_flag input {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 30px;
+	height: 34px;
+	background-color: rgba(0,0,0,0);    /*makes positions invisible*/
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	vertical-align: top;
+}
+
+#flag_switch:checked ~ #map_flag {
+	pointer-events: all;
+}
+
+#map_flag input:checked {
+	background-position: 0px 5px;
+	background-repeat: no-repeat;
+	pointer-events: all;
+}
+
+
+
+
+.the_table {
+	z-index: 9999;/*stack order. highest element is always in front of an element with a lower stack order*/
+	border-spacing: 0;
+	background-color: #c0c0c0; /*color of box after clicked on*/
+	font-size: 26px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.the_table td {
+	width: 32px;
+	height: 32px;
+	border: solid 1px #808080;
+	text-align: center;
+}
+
+.click {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.click input {
+	position: absolute;
+	width: 34px;
+	height: 34px;
+	border: outset 4px #fff;
+	background-color: #c0c0c0;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	vertical-align: top;
+	z-index: 30;
+}
+
+.maptable input:checked {
+	opacity: 0;
+}
+
+.click .move {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 306px;
+	height: 306px;
+	z-index: -1;
+}
+
+input.bomb:checked ~ .move {
+	z-index: 9999;
+}
+
+.click .remove{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 306px;
+	height: 306px;
+	z-index: -1;
+}
+
+input.close {
+	position: absolute;
+	top: 54px;
+	left: 261px;
+	width: 15px;
+	height: 15px;
+	border: outset 2px #fff;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+}
+
+input.close:checked {
+	opacity: 0;
+}
+
+.new_window {
+	width: 250px;
+	height: 150px;
+	margin: 50px auto;
+	border: outset 2px #fff;
+	background-color: #c0c0c0;
+	font-size: 12px;
+	font:9pt ;
+}
+
+input.close:checked ~ .new_window {
+	opacity: 0;
+}
+
+.win {
+	width: 245px;
+	height: 18px;
+	background: -webkit-linear-gradient(left, #006, #9cf);
+	color: #fff;
+	padding: 1px 0 0 5px;
+}
+
+.new_window p {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.retry {
+	display: block;
+	width: 100px;
+	line-height: 2;
+	margin: 25px auto 0 auto;
+	border: outset 1px #fff;
+	vertical-align: middle;
+	text-align: center;
+	text-decoration: none;
+	color: blue;
+}
+
+.click .smile {
+	position: absolute;
+	top: -46px;
+	left: 130px;
+	width: 21px;
+	height: 21px;
+	border: outset 3px #fff;
+	background-color: #c0c0c0;
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.click .timer {
+	position: absolute;
+	top: -48px;
+	left: 170px;
+	
+	border: outset 3px #fff;
+	background-color: #c0c0c0;
+	background-position: 2px 2px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+input.bomb:checked ~ .smile{
+	z-index: 9999;
+}
+
+
+
+.empty_space {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.empty_space span {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	border: outset 4px #fff;
+	background-color: #c0c0c0;
+}
+
+.empty_space input {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	width: 34px;
+	height: 34px;
+	border: outset 4px #fff;
+	background-color: #c0c0c0;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	z-index: 25;
+}
+
+.row1 {
+	top: 0;
+}
+
+.row2 {
+	top: 34px;
+}
+
+.row3 {
+	top: 68px;
+}
+
+.row4 {
+	top: 102px;
+}
+
+.row5 {
+	top: 136px;
+}
+
+.row6 {
+	top: 170px;
+}
+
+.row7 {
+	top: 204px;
+}
+
+.row8 {
+	top: 238px;
+}
+
+.row9 {
+	top: 272px;
+}
+
+.column1 {
+	left: 0px;
+}
+
+.column2 {
+	left: 34px;
+}
+
+.column3 {
+	left: 68px;
+}
+
+.column4 {
+	left: 102px;
+}
+
+.column5 {
+	left: 136px;
+}
+
+.column6 {
+	left: 170px;
+}
+
+.column7 {
+	left: 204px;
+}
+
+.column8 {
+	left: 238px;
+}
+
+.column9 {
+	left: 272px;
+}
+
+.one {
+	color: #00f;
+}
+
+.two {
+	color: #070;
+}
+
+.three {
+	color: #f00;
+}
+
+.navy4 {
+	color: #000080;
+}
+
+.five {
+	color: #800000;
+}
+
+.bomb_background {
+background-image: url("bomb.png");
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;}
+
+
+#em_b1 {			/*lets you click empty space*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 204px;
+	height: 306px;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	z-index: 20;
+	opacity: 0;
+}
+
+#em_b2 {				/*lets you click empty space*/
+	position: absolute;
+	top: 204px;
+	left: 272px;
+	width: 34px;
+	height: 102px;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	z-index: 20;
+	opacity: 0;
+}
+
+#em_b1:checked ~ span,
+#em_b1:checked ~ input {
+	opacity: 0;
+}
+
+#em_b2:checked ~ span,
+#em_b2:checked ~ input {
+	opacity: 0;
+}
+
+#b1_2:checked ~ #b1_3:checked ~ #b1_4:checked ~ #b1_6:checked ~ #b1_7:checked ~ #b1_8:checked ~ #b1_9:checked ~ #b2_1:checked ~ #b2_2:checked ~ #b2_9:checked ~ #b3_1:checked ~ #b3_8:checked ~ #b3_9:checked ~ #b4_8:checked ~ #b4_9:checked ~ #b5_9:checked ~ #b9_1:checked ~ #b9_7:checked ~ .smile{
+	z-index: 9999;
+}
+
+#b1_2:checked ~ #b1_3:checked ~ #b1_4:checked ~ #b1_6:checked ~ #b1_7:checked ~ #b1_8:checked ~ #b1_9:checked ~ #b2_1:checked ~ #b2_2:checked ~ #b2_9:checked ~ #b3_1:checked ~ #b3_8:checked ~ #b3_9:checked ~ #b4_8:checked ~ #b4_9:checked ~ #b5_9:checked ~ #b9_1:checked ~ #b9_7:checked ~ .remove {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 306px;
+	height: 306px;
+	z-index: 9999;
+}
+
+input:checked ~ #call {
+	background-image: url("tf9.png");
+}
+
+input:checked ~ input:checked ~ #call {
+	background-image: url("tf8.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf7.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf6.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf5.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf4.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf3.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf2.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf1.png");
+}
+
+input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ #call {
+	background-image: url("tf0.png");
+}
+
+/*background for the word FLAG. can change to another pic */
+#right_sign {
+	background-image: url("flag.png");
+}
+
+
+/*when flag button is pressed the letter FLAG lights up*/
+/* the checked keyword checks to see if the flag is on then is triggers the border with this new background(a bright version of FLAG)*/
+#flag_switch:checked ~ #right_sign {
+	background-image: url("tf0.png");
+}
+
+#call {
+	background-image: url("tf10.png")
+}
+
+#map_flag input:checked {
+	background-image: url("flagdisplay.png");
+}
+
+input.close {
+	background-image: url("close.png");
+}
+.close{
+	width: 3px;
+	height: 3px;
+	background-size: 10px
+
+}
+
+.click .smile {
+	background-image: url("smile.png");
+}
+.click .timer{
+	background-image: url("timer.gif");
+}
+.smile{
+	width: 5px;
+	height: 5px;
+	background-size: 20px;
+}
+.timer{
+	width: 50px;
+	height: 40px;
+	background-size: 45px;
+
+}
+
+input.bomb:checked ~ .smile {
+	background-image: url("sad.jpeg");
+}
+input.bomb:checked ~ .timer {
+	background-image: url("down.png");
+
+}
+
+.win{
+	font-size: 20px;
+	color: red;
+
+}
+
+
+#b1_2:checked ~ #b1_3:checked ~ #b1_4:checked ~ #b1_6:checked ~ #b1_7:checked ~ #b1_8:checked ~ #b1_9:checked ~ #b2_1:checked ~ #b2_2:checked ~ #b2_9:checked ~ #b3_1:checked ~ #b3_8:checked ~ #b3_9:checked ~ #b4_8:checked ~ #b4_9:checked ~ #b5_9:checked ~ #b9_1:checked ~ #b9_7:checked ~ .smile
+ {
+
+	background-image: url("smile.png");
+
+}

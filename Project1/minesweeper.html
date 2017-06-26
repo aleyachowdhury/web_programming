@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+	<title>MineSweeper</title>
+	<link rel = "stylesheet" type="text/css" href = "style.css"/>
+</head>
+
+<body>
+<div id="bodydiv">
+	<input type="radio" id="play">
+	<div id="options"></div>
+	<input type="checkbox" id="flag_switch">
+			<div id="right_sign"></div>
+		
+
+		<div id="map_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+				<input type="checkbox" class="the_flag">
+
+		<div id="call"></div>
+		</div>
+		
+
+	<div id="mapdiv" class="maptable" >
+		<table class="the_table">
+			<tr>
+				<td class="bomb_background"></td>
+				<td class="two">2</td>
+				<td class="one">1</td>
+				<td class="two">2</td>
+				<td class="bomb_background"></td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+			</tr>
+			<tr>
+				<td class="two">2</td>
+				<td class="three">3</td>
+				<td class="bomb_background"></td>
+				<td class="two">2</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="bomb_background"></td>
+				<td class="one">1</td>
+			</tr>
+			<tr>
+				<td class="two">2</td>
+				<td class="bomb_background"></td>
+				<td class="two">2</td>
+				<td class="one">1</td>
+				<td></td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+			</tr>
+			<tr>
+				<td class="bomb_background"></td>
+				<td class="two">2</td>
+				<td class="one">1</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+			</tr>
+			<tr>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="bomb_background"></td>
+				<td class="one">1</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="one">1</td>
+				<td class="two">2</td>
+				<td class="two">2</td>
+				<td class="one">1</td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="bomb_background"></td>
+				<td class="one">1</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="one">1</td>
+				<td class="bomb_background"></td>
+				<td class="bomb_background"></td>
+				<td class="one">1</td>
+				<td></td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td class="one">1</td>
+				<td></td>
+			</tr>
+		</table>
+
+		<div class="click">
+				<input type="radio" id="b1_1" class="row1 column1 bomb">
+				<input type="radio" id="b1_2" class="row1 column2">
+				<input type="radio" id="b1_3" class="row1 column3">
+				<input type="radio" id="b1_4" class="row1 column4">
+				<input type="radio" id="b1_5" class="row1 column5 bomb">
+				<input type="radio" id="b1_6" class="row1 column6">
+				<input type="radio" id="b1_7" class="row1 column7">
+				<input type="radio" id="b1_8" class="row1 column8">
+				<input type="radio" id="b1_9" class="row1 column9">
+
+				<input type="radio" id="b2_1" class="row2 column1">
+				<input type="radio" id="b2_2" class="row2 column2">
+				<input type="radio" id="b2_3" class="row2 column3 bomb">
+				<input type="radio" id="b2_8" class="row2 column8 bomb">
+				<input type="radio" id="b2_9" class="row2 column9">
+
+				<input type="radio" id="b3_1" class="row3 column1">
+				<input type="radio" id="b3_2" class="row3 column2 bomb">
+				<input type="radio" id="b3_8" class="row3 column8">
+				<input type="radio" id="b3_9" class="row3 column9">
+
+				<input type="radio" id="b4_1" class="row4 column1 bomb">
+				<input type="radio" id="b4_8" class="row4 column8">
+				<input type="radio" id="b4_9" class="row4 column9">
+
+				<input type="radio" id="b5_8" class="row5 column8 bomb">
+				<input type="radio" id="b5_9" class="row5 column9">
+
+				<input type="radio" id="b8_7" class="row8 column7 bomb">
+
+				<input type="radio" id="b9_1" class="row9 column1">
+				<input type="radio" id="b9_2" class="row9 column2 bomb">
+				<input type="radio" id="b9_3" class="row9 column3 bomb">
+				<input type="radio" id="b9_7" class="row9 column7">
+
+				<div class="move"></div>
+				<div class="remove">
+					<input type="radio" class="close">
+					<div class="new_window">
+						<div class="win">
+						<p><span>You Won!!Congratulations!!!!</span></p>
+						</div>
+						<br>
+						<br>
+
+						<a href="" class="retry">Play Again?</a>
+					</div>
+				</div>
+				<a href="" class="smile"></a>
+				<a href=""  class="timer"></a>
+		</div>
+
+		<div class="empty_space">
+			<input type="radio" id="em_b1">
+			<input type="radio" class="row2 column4">
+			<input type="radio" class="row2 column5">
+			<input type="radio" class="row2 column6">
+			<input type="radio" class="row2 column7">
+			<input type="radio" class="row3 column3">
+			<input type="radio" class="row3 column4">
+			<input type="radio" class="row3 column7">
+			<input type="radio" class="row4 column2">
+			<input type="radio" class="row4 column3">
+			<input type="radio" class="row4 column7">
+			<input type="radio" class="row5 column1">
+			<input type="radio" class="row5 column2">
+			<input type="radio" class="row5 column7">
+			<input type="radio" class="row6 column7">
+			<input type="radio" class="row7 column6">
+			<input type="radio" class="row7 column7">
+			<input type="radio" class="row8 column1">
+			<input type="radio" class="row8 column2">
+			<input type="radio" class="row8 column3">
+			<input type="radio" class="row8 column4">
+			<input type="radio" class="row8 column6">
+			<input type="radio" class="row9 column4">
+			<input type="radio" class="row9 column6">
+			<span class="row3 column5"></span>
+			<span class="row3 column6"></span>
+			<span class="row4 column4"></span>
+			<span class="row4 column5"></span>
+			<span class="row4 column6"></span>
+			<span class="row5 column3"></span>
+			<span class="row5 column4"></span>
+			<span class="row5 column5"></span>
+			<span class="row5 column6"></span>
+			<span class="row6 column1"></span>
+			<span class="row6 column2"></span>
+			<span class="row6 column3"></span>
+			<span class="row6 column4"></span>
+			<span class="row6 column5"></span>
+			<span class="row6 column6"></span>
+			<span class="row7 column1"></span>
+			<span class="row7 column2"></span>
+			<span class="row7 column3"></span>
+			<span class="row7 column4"></span>
+			<span class="row7 column5"></span>
+			<span class="row8 column5"></span>
+			<span class="row9 column5"></span>
+		</div>
+
+		<div class="empty_space">
+			<input type="radio" id="em_b2">
+			<input type="radio" class="row6 column8">
+			<input type="radio" class="row6 column9">
+			<input type="radio" class="row7 column8">
+			<input type="radio" class="row8 column8">
+			<input type="radio" class="row9 column8">
+			<span class="row7 column9"></span>
+			<span class="row8 column9"></span>
+			<span class="row9 column9"></span>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
