@@ -60,16 +60,9 @@ WISCONSIN
 RHODE ISLAND
 VERMONT
 OREGON";
-# below ($special_letters) are extra characters given in words; '?' does not work
-#   these characters are automatically filled in if in the word/phrase to guess
-$special_letters = " -.,;!?%&0123456789";
-# make sure that any characters to be used in $list are in either
-#   $alpha OR $special_letters, but not in both.  It may not work if you change fonts.
-#   You can use either upper OR lower case of each, but not both cases of the same letter.
 
-# below ($char) is the alphabet letters to guess from.
-#   you can add international (non-English) letters, in any order, such as in:
-#   $alpha = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝŸABCDEFGHIJKLMNOPQRSTUVWXYZ";
+$special_letters = " -.,;!?%&0123456789";
+
 $char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 // len_char is equal to the length of $alpha
 
