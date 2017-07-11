@@ -38,7 +38,7 @@
 <a href="country.php">List of Country</a>
 </div>
 <div id='l3'>
-<a href="geo.php">Computer Science</a>
+<a href="csc.php">Computer Science</a>
 </div>
 
 
