@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset = "utf-8">
+<title>Form</title>
+
+<script type="text/javascript">
+
+   function call(){
+       var id = document.getElementById("id").value;
+       var fName = document.getElementById("fName").value;
+       var lName = document.getElementById("lName").value;
+      
+       if(id=="" || id==null){
+
+           alert('You forgot to fill ID');
+           document.getElementById("idError").innerHTML = "Please Enter an ID";
+       }
+       else{
+           document.getElementById("idError").innerHTML = "";
+       }
+       if(fName=="" || fName==null){
+           alert('You forgot to fill First Name');
+         
+           document.getElementById("fNameError").innerHTML = "Please Enter a First Name";
+       }
+       else{
+           document.getElementById("fNameError").innerHTML = "";
+       }
+       if(lName=="" || lName==null){
+           alert('You forgot to fill Last Name');
+         
+           document.getElementById("lNameError").innerHTML = "Please Enter a Last Name";
+       }
+       else{
+           document.getElementById("lNameError").innerHTML = "";
+       }
+      
+      
+       if(id !="" && id!=null && fName!="" && fName!=null && lName!="" && lName!=null) { 
+           var demo = "ID: "+id+"<br>First Name: "+fName+"<br>Last Name: "+lName;
+           document.getElementById("demo").innerHTML = demo;
+       }
+       else{
+           document.getElementById("demo").innerHTML = "";
+       }
+       return false; 
+      
+      
+   }
+
+</script>
+
+</head>
+<body>
+ 
+<form action="_blank" onsubmit="return call();" method="post" >
+<table>
+<tr>
+   
+        <td>ID:</td>
+         <td id="idError" style="color: red; text-decoration: underline;"></td>
+        <td><input type="text" id="id" name="id"/></td>
+  </tr>
+  <tr>
+     
+        <td>First Name:</td>
+        <td id="fNameError" style="color: red; text-decoration: underline;"></td>
+         <td><input type="text" id="fName" name="fName" /></td>
+   </tr>
+   <tr>
+     
+        <td>Last Name:</td>
+       <td id="lNameError" style="color: red; text-decoration: underline;"></td>
+        <td><input type="text" id="lName" name="lName"/></td><br>
+        
+     </tr>
+     <tr> 
+      <td><input type="submit" value="Add"/><td>
+      </tr>
+      <tr> 
+      <td><input type="reset" value="Reset"/><td>
+      </tr>
+  </table>
+       
+</form>
+
+<p id="demo">
+
+</p>
+
+</body>
+</html>
