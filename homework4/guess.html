@@ -1,0 +1,36 @@
+<html>
+
+<script src="guess.js" >
+
+</script>
+
+<head>
+
+<title>Guessing Game</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <link rel="stylesheet" type="text/css" href="guess.css">
+
+</head>
+
+<body id = 'content1' onload="calc()">
+<audio id="tic1" src="tic.mp3"></audio>
+<div id ='content'><button onClick="play()">CLICK HERE TO HEAR SOUND</button></div>
+<p id="demo"></p>
+<div id='content3'>
+<h1>Guess a number in between 1 to 100!</h1>
+<p>You Have 2 Minutes. Your Time Satrts Now</p>
+<span id="minutes">00</span>:<span id="seconds">00</span>
+<input type="text" name="play" id="play">
+</div><br><br>
+ <div id='content2'><button onclick="try_num()">Guess Number</button></div>
+
+<p id="trial"></p>
+
+
+
+
+
+
+</body>
+
+</html>
