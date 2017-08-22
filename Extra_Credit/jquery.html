@@ -1,0 +1,331 @@
+<html>
+    <head>
+        <title>Assignment 6</title>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="jquery.validate.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+           $( function() { 
+            var $home = $('#home'),
+                $bin = $('#bin');
+            
+            
+            $("li", $home).draggable({
+                cancel:"a.ui-icon",
+                revert:"invalid",
+                containment: "document",
+                helper: "clone",
+                cursor:"move"
+            });
+               $bin.droppable({
+                accept:"#home > li",
+                   classes:{
+                     "ui-droppable-active":"ui-state-highlight"  
+                   },
+                   drop: function(event, ui){
+                        var r = confirm("Are you sure you want to remove this item?");
+                       if (r){
+                            deleteImage(ui.draggable);
+                       }
+                   }
+               });
+               
+               $home.droppable({
+                  accept:"#bin li",
+                   classes:{
+                     "ui-droppable-active":"custom-state-active"  
+                   },
+                   drop:function(event, ui){
+                       recycleImage(ui.draggable);
+                   }
+               });
+               
+               
+               function deleteImage($item){
+                   $item.fadeOut(function(){
+                            var $list = $("ul", $bin).length ?
+                          $("ul", bin):
+                          $("<ul class='gui' />").appendTo($bin);
+                        
+                   });
+               }
+           });
+            
+            
+            $(document).ready(function(){
+                 $('#wire').hide();
+                 $('#ccard').hide();
+                $('#buy').hide();
+                $('#information').hide();
+                $("input[type='radio']").click(function(){
+                
+                    check_radio(this);
+               });
+                $("#more").click(function(){
+                    $('#information').show();
+                });
+                
+                $("#info1").mouseenter(function(){
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (){
+                      if (this.readyState == 4){
+                          document.getElementById('info1').innerHTML = this.responseText;
+                      }  
+                    };
+                    
+                    xhttp.open("GET", "info1.html", true);
+                    xhttp.send();
+                });
+                
+                $("#info1").click(function() {
+                    alert("function");
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (){
+                        alert(this.readyState);
+                      if (this.readyState == 4){
+                          alert(this.responseText);
+                          document.getElementById('info1').innerHTML = this.responseText;
+                      }  
+                    };
+                    
+                    xhttp.open("GET", "info1.html", true);
+                    xhttp.send();
+                });
+                
+                $("#info2").mouseenter(function(){
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (){
+                      if (this.readyState == 4){
+                          document.getElementById('info2').innerHTML = this.responseText;
+                      }  
+                    };
+                    
+                    xhttp.open("GET", "info2.html", true);
+                    xhttp.send();
+                });
+                
+                $("#info2").click(function() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (){
+                      if (this.readyState == 4){
+                          document.getElementById('info2').innerHTML = this.responseText;
+                      }  
+                    };
+                    
+                    xhttp.open("GET", "info2.html", true);
+                    xhttp.send();
+                });
+                
+                $("#info3").mouseenter(function(){
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (){
+                      if (this.readyState == 4){
+                          document.getElementById('info3').innerHTML = this.responseText;
+                      }  
+                    };
+                    
+                    xhttp.open("GET", "info3.html", true);
+                    xhttp.send();
+                });
+                $("#info3").click(function() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function (){
+                      if (this.readyState == 4){
+                          document.getElementById('info3').innerHTML = this.responseText;
+                      }  
+                    };
+                    
+                    xhttp.open("GET", "info3.html", true);
+                    xhttp.send();
+                });
+                
+                $("#buy").click(function(){
+                  
+                    var cardnum = $("#cardnum").val();
+                    var month = $("#month").val();
+                    var year = $("#year").val();
+                    var secnum = $("#secnum").val();
+                  
+                    if ( cardnum.length == 0)
+                    {
+                        alert("Please Enter 13 Digit Card Number");
+                        $("#cardnum").focus();
+                    }else if (isNaN(cardnum))
+                    {
+                         alert("Please Enter only numbers");
+                         $("#cardnum").focus();   
+                    } else if ( month.length == 0)
+                    {
+                        alert("Please Enter Month of your card Expiration");
+                        $("#month").focus();
+                    }else if (isNaN(month))
+                    {
+                         alert("Please Enter only numbers for Month");
+                         $("#month").focus();   
+                    } else if (month < 0 || month > 11)
+                    {
+                         alert("Please Enter numbers for Month Ex January-00");
+                         $("#month").focus();   
+                    }else if (year.length == 0)
+                    {
+                        alert("Please Enter Year of your card Expiration");
+                        $("#year").focus();
+                    }else if (isNaN(year))
+                    {
+                         alert("Please Enter only numbers for Years");
+                         $("#cardnum").focus();   
+                    }else if (year.length !== 4)
+                    {
+                         alert("Enter year of your Card Expirition");
+                         $("#year").focus();   
+                    }else if ( secnum.length == 0)
+                    {
+                        alert("Please Enter 3 Digit Security Number");
+                        $("#secnum").focus();
+                    }else if (isNaN(secnum))
+                    {
+                         alert("Please Enter only numbers");
+                         $("#secnum").focus();   
+                    }
+                    else if (secnum.length !== 3)
+                    {
+                         alert("Please Enter exactly 3 digit numbers from back of your card");
+                         $("#secnum").focus();   
+                    }else{
+                        alert("You are ready to buy")
+                    }
+                });
+            });
+            
+        function check_radio(obj){
+        
+            if (obj.value == "1")
+            {
+                $('#ccard').show();
+                $('#wire').hide();
+                $('#buy').show();
+            }
+            else if (obj.value == "2"){
+                $('#wire').show();
+                $('#ccard').hide();
+                $('#buy').show();
+            }
+        }
+            
+            jQuery.validator.setDefaults({
+              debug: true,
+              success: "valid"
+            });
+            $( "#form" ).validate({
+              rules: {
+                field: {
+                  required: true,
+                  step: 10
+                }
+              }
+            });
+        </script>
+        <style type="text/css" rel="stylesheet">
+            #content {
+                background-image: url("back.jpg");
+                text-align: center;
+            }
+            h1{
+                color: #003300;
+            }
+           #home { 
+            float: left; width: 70%; min-height: 13em; 
+          }
+           #home li { 
+            float: left; 
+            width: 100px; 
+            padding: 0.4em; 
+            margin: 0 0.4em 4em 0; 
+            text-align: center;
+             }
+            #item{
+                border: 2px solid black;
+            }
+            #bin{
+                
+                width: 200px;
+                height: 200px;
+                float:center;
+            }
+            
+            #more{
+                text-align: left;
+            }
+            p{
+                cursor:progress;
+            }
+        </style>
+    </head>
+     <body id="content">
+
+        <h1> Shop here</h1>
+               
+                <div id="payment">
+                    <label>Payment Method : </label>
+                    <div id="radio">
+                        <input type="radio" id="r2" name="r" value="1"/><label>Credit Card</label>
+                        <input type="radio" id="r1" name="r" value="2" onchange="check()"/><label>Wire transfer</label>
+                    </div>
+                </div><br/>
+                <div id="ccard">
+                    <label>Card Number : </label> <input type="text" id="cardnum" /> 
+                    <label>Expiration : (MM/YYYY)</label><input type="text" id="month" maxlength="2" size="2"/><input type="text" id="year" maxlength="4" size="4"/>
+                    <label>3 Digit Security Number</label><input type="text" id="secnum" maxlength="3" size="3"/>
+                </div>
+                <div id="wire">
+                    <label>Transfer the Amount to : reg.$957.00, to account 0009286322 </label> 
+                </div>
+                <br/>
+                <button id="buy">BUY</button>
+            </div>
+            
+            
+            
+            <br/><br/><br/>
+           
+                <div class="items">
+                    <ul id="home" class="home-ui">
+                        <li class="home-li">
+                            <img src="bag.png" width="100" height="100"/>
+                        </li>
+                        <li class="home-li">
+                            <img src="color.png" width="100" height="100"/>
+                        </li>
+                        <li class="home-li">
+                            <img src="pencil.png" width="100" height="100"/>
+                        </li>
+                        <li class="home-li">
+                            <img src="book.png" width="100" height="100"/>
+                        </li>
+                    </ul>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          
+
+                    <div id="bin" class="bin">
+                      <h4 class="bin-header">You can remove item here<img src="bin.jpeg" width="150" height="150"/></h4>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <br/><br/>
+          
+                <button id="more">Click for more information</button>
+                <div id="information">
+                    <p id="info1"> 1. How does Google protect my privacy and keep my information secure ?</p>
+                    <div id="info1"></div>
+                    <p id="info2"> 2. How can I remove information about myself from Google's search results ?</p>
+                    <div id="info2"></div>
+                    <p id="info3"> 3. Are my search queries sent to websites when I click on Google Search results ?</p>
+                    <div id="info3"></div>
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>
